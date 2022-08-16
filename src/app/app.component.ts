@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularProject';
+
+  title: string = "angularProject"
+
+
+  hOneTitle: string = "";
+  hOneChange: string = "";
+  input: string = "";
+  clear: string = "";
+  
+
+  public onBlur(valor: string) {
+    this.hOneChange = valor; 
+  }
+
+  public salvarBtn(){
+    this.hOneTitle = this.hOneChange
+    
+  }
+
+  public limparBtn(){
+    this.clear = '';
+  
+  }
+
+
+
 }
