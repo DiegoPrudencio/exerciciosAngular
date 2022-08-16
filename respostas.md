@@ -12,3 +12,6 @@ Respostas - Lista 1
     Acredito que essas diferenças ocorrem para a garantia do melhor funcionamento do framework quando enviado para o repositório remoto e, também para evitar enviar multiplas pastas e arquivos como no "modulos".
 
     6 - O comando do Node instala as dependências é o "npm i" com o terminal (cmd) aberto na pasta raiz.  O npm rastreia os módulos instalados em um projeto com o arquivo package.json que reside em um diretório de projeto.
+
+
+Diego Ailton Prudêncio
