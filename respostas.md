@@ -14,4 +14,3 @@ Respostas - Lista 1
     6 - O comando do Node instala as dependências é o "npm i" com o terminal (cmd) aberto na pasta raiz.  O npm rastreia os módulos instalados em um projeto com o arquivo package.json que reside em um diretório de projeto.
 
 
-Diego Ailton Prudêncio
