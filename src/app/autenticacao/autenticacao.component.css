@@ -1,3 +1,25 @@
-.text-success {
-    color: blueviolet;
+.marginLb {
+    margin-bottom: 5px;
+}
+
+.marginInp {
+    margin-bottom: 20px;
+}
+
+.bg-light {
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.marginDiv {
+    margin-bottom: 30px;
+}
+
+.green {
+    color: greenyellow;
+}
+
+.red {
+    color: red;
 }

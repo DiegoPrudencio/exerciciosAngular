@@ -1,21 +1,46 @@
-<div class="container p-5 my-5 border">
-    <h2>Login</h2>
+<form action="" class="container p-5 my-5 border">
 
-    <p class="text-success">E-mail Adress</p>
+    <div class="bigbox">
+        <h4 class="marginInp">Login</h4>
 
-    <!-- <input type="text" 
-    [value] = "input"
-    [(ngModel)]="clear"
-    (blur) = "onBlur(inputValue.value)"
-    #inputValue> 
+        <div class="form-group">
+            <label for="idEmail" class="text-muted marginLb">E-Mail Adress</label>
+            <input type="email" name="email" class="form-control marginInp" id="idEmail" [(ngModel)]="email">
+        </div>
 
-    <p>Password</p>
+        <div class="form-group">
 
-    <input type="text" 
-    [value] = "input"
-    [(ngModel)]="clear"
-    (blur) = "onBlur(inputValue.value)"
-    #inputValue> -->
+            <div class="row">
+                <div class="col marginLb">
+                    <label for="idPassword" class="text-muted">Password</label>
+                </div>
+                <div class="col">
+                    <label class="text-primary">Forgot Password?</label>
+                </div>
+            </div>
+            <input type="password" [(ngModel)] = "password" name = "password" class="form-control marginInp" id="idPassword">
+        </div>
 
+        <div class="row marginDiv">
+            <div class="col">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="idCheckbox">
+                    <label class="form-check-label" for="idCheckbox">Remember Me</label>
+                </div>
+            </div>
+            <div class="col">
+                <button (click)="login()" class="btn btn-primary" name="mnBtnLogin" id="idBtnLogin">Login</button>
+            </div>
+        </div>
 
-</div>
+        <div>
+            <output [class] = "color" [value] = "message" #outputValue></output>
+        </div>
+
+        <div class="bg-light">
+            <label for="idCheckbox">Don't have an account?</label>
+            <label for="idCheckbox"> Create One</label>
+        </div>
+
+    </div>
+</form>
