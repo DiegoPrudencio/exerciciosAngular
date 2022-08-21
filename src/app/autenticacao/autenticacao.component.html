@@ -4,8 +4,8 @@
         <h4 class="marginInp">Login</h4>
 
         <div class="form-group">
-            <label for="idEmail" class="text-muted marginLb">E-Mail Adress</label>
-            <input type="email" name="email" class="form-control marginInp" id="idEmail" [(ngModel)]="email">
+            <label for="idUserId" class="text-muted marginLb">E-Mail Adress</label>
+            <input type="email" name="userId" class="form-control marginInp" id="idUserId" [(ngModel)]="usuario.userId">
         </div>
 
         <div class="form-group">
@@ -18,7 +18,7 @@
                     <label class="text-primary">Forgot Password?</label>
                 </div>
             </div>
-            <input type="password" [(ngModel)] = "password" name = "password" class="form-control marginInp" id="idPassword">
+            <input type="password" [(ngModel)] = "usuario.password" name = "password" class="form-control marginInp" id="idPassword">
         </div>
 
         <div class="row marginDiv">
@@ -34,8 +34,12 @@
         </div>
 
         <div>
-            <output [class] = "color" [value] = "message" #outputValue></output>
+
+            <div class="spinner-border text-info" *ngIf="isSpinner"></div>
+            <output *ngIf="isMessage" [ngClass]="color" [value] = "message"></output>
+            
         </div>
+        <!-- [class] = "color"  -->
 
         <div class="bg-light">
             <label for="idCheckbox">Don't have an account?</label>

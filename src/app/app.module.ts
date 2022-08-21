@@ -15,6 +15,8 @@ import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent, AutenticacaoComponent]
+  bootstrap: [AppComponent, 
+    AutenticacaoComponent
+  ]
 })
 export class AppModule { }
