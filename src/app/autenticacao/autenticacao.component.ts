@@ -12,7 +12,7 @@ export class AutenticacaoComponent {
 
     email: string = "XPTO-21";
     password: string = "Trocar@123";
-    message: string = "";
+    msn?: string = "";
     contador: number = 0;
     color: string = "";
     isMessage: boolean = false;
@@ -47,20 +47,20 @@ export class AutenticacaoComponent {
     messageField() {
         if (this.contador < 3) {
             if ((this.usuario.userId == this.email) && (this.usuario.password == this.password)) {
-                this.message = "Logado!"
+                this.msn = "Logado!"
                 this.color = this.classes.colorOne;
                 this.clearInput()
             } else if ((this.usuario.userId != this.email) && (this.usuario.password == this.password)) {
-                this.message = "Acesso negado, usuário incorreto";
+                this.msn = "Acesso negado, usuário incorreto";
                 this.color = this.classes.colorTwo;
                 this.clearInput()
             } else if ((this.usuario.userId == this.email) && (this.usuario.password != this.password)) {
-                this.message = "Acesso negado, senha incorreta"
+                this.msn = "Acesso negado, senha incorreta"
                 this.color = this.classes.colorTwo;
                 this.clearInput()
             }
         } else if (this.contador === 3) {
-            this.message = "Usuário Bloqueado!"
+            this.msn = "Usuário Bloqueado!"
             this.color = this.classes.colorTwo;
         }
     }

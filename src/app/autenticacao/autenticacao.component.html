@@ -1,5 +1,6 @@
-<form action="" class="container p-5 my-5 border">
-
+<form action="" class="container form">
+    
+    <!-- p-5 my-5 border // bigbox -->
     <div class="bigbox">
         <h4 class="marginInp">Login</h4>
 
@@ -14,8 +15,8 @@
                 <div class="col marginLb">
                     <label for="idPassword" class="text-muted">Password</label>
                 </div>
-                <div class="col">
-                    <label class="text-primary">Forgot Password?</label>
+                <div class="col text">
+                    <a class="text-primary" href="">Forgot Password?</a>
                 </div>
             </div>
             <input type="password" [(ngModel)] = "usuario.password" name = "password" class="form-control marginInp" id="idPassword">
@@ -28,7 +29,7 @@
                     <label class="form-check-label" for="idCheckbox">Remember Me</label>
                 </div>
             </div>
-            <div class="col">
+            <div class="col text">
                 <button (click)="login()" class="btn btn-primary" name="mnBtnLogin" id="idBtnLogin">Login</button>
             </div>
         </div>
@@ -36,14 +37,13 @@
         <div>
 
             <div class="spinner-border text-info" *ngIf="isSpinner"></div>
-            <output *ngIf="isMessage" [ngClass]="color" [value] = "message"></output>
+            <output *ngIf="isMessage" [ngClass]="color" [value] = "msn"></output>
             
         </div>
         <!-- [class] = "color"  -->
 
         <div class="bg-light">
-            <label for="idCheckbox">Don't have an account?</label>
-            <label for="idCheckbox"> Create One</label>
+            <label for="idCheckbox">Don't have an account? <a href="">Create One</a></label> 
         </div>
 
     </div>

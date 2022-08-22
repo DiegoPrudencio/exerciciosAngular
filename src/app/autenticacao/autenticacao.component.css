@@ -1,3 +1,11 @@
+.form {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 0%;
+    border: 0.1px solid lightgray;
+    padding: 20px;
+}
+
 .marginLb {
     margin-bottom: 5px;
 }
@@ -14,6 +22,10 @@
 
 .marginDiv {
     margin-bottom: 30px;
+}
+
+.text {
+    text-align: end;
 }
 
 .green {
