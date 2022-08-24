@@ -1,25 +1,30 @@
-<div class="container">
-  <h1 class="h1"> {{ hOneTitle }} </h1>
-</div>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" >Entra21 - Project</a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contato">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ul>
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>
 
-<div class="container">
-
-  <input type="text" 
-  [value] = "input"
-  [(ngModel)]="clear"
-  (blur) = "onBlur(inputValue.value)"
-  #inputValue> <!-- esse # chama o value do input-->
-  
-    
-</div>
-
-<div class="container">
-  <button (click)="salvarBtn()" class="btn" name="mnBtnSalvar" id="idBtnSalvar">Salvar</button>
-
-  <button (click)="limparBtn()" class="btn" name="mnBtnLimpar" id="idBtnLimpar">Limpar</button>
-</div>
-
-<app-autenticacao></app-autenticacao>
+<!-- <app-autenticacao></app-autenticacao> -->
 
 
 
