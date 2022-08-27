@@ -6,12 +6,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { Error404Component } from './pages/error404/error404.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}, 
+  {path: '', component: HomeComponent, canActivate: [AuthGuard]}, 
   {path: 'login', component: AutenticacaoComponent},
-  {path: 'contato', component: ContatoComponent},
+  {path: 'contato', component: ContatoComponent, canActivate: [AuthGuard]},
   {path: '**', component: Error404Component}
 ]
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes), 
+    RouterModule.forRoot(routes) 
   ],
   exports: [RouterModule]
 })

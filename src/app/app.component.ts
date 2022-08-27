@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,25 +10,23 @@ export class AppComponent {
 
   title: string = "angularProject"
 
+  constructor(private router: Router){}
 
-  hOneTitle: string = "";
-  hOneChange: string = "";
-  input: string = "";
-  clear: string = "";
-  
+  isHidden: boolean = true
 
-  public onBlur(valor: string) {
-    this.hOneChange = valor; 
+  public logout(){
+    localStorage['token'] = "false"
+    this.isHidden = true;
+    this.router.navigate(['/login']);
   }
 
-  public salvarBtn(){
-    this.hOneTitle = this.hOneChange
-    
-  }
-
-  public limparBtn(){
-    this.clear = '';
-  
+  public readLocalStorageToken() {
+    if (localStorage['token'] === "true") {
+      this.isHidden = false;
+      return true
+    } else {
+      return false
+    }
   }
 
 

@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RodapeComponent } from './rodape/rodape.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     AutenticacaoComponent,
     HomeComponent,
     ContatoComponent,
-    Error404Component
+    Error404Component,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,12 +28,13 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent, 
     AutenticacaoComponent,
     HomeComponent,
     ContatoComponent,
-    Error404Component
+    Error404Component,
+    RodapeComponent
   ]
 })
 export class AppModule { }

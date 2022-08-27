@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+
+import { Router } from '@angular/router';
 import { Usuario } from "../interfaces/usuario/usuario";
 import { AutenticacaoService } from "../services/autenticacao.service";
 
@@ -24,15 +26,13 @@ export class AutenticacaoComponent {
         colorTwo: "red"
     }
 
-    // user?: Usuario;
-
     usuario: Usuario = {
         userId: "",
         password: "",
         tipo: ""
     }
 
-    constructor(private autenticacaoService: AutenticacaoService) { }
+    constructor(private autenticacaoService: AutenticacaoService, private router: Router) { }
 
     ngOnInit(): void {
     }
@@ -43,6 +43,7 @@ export class AutenticacaoComponent {
     }
 
     public login() {
+
 
         this.isMessage = false
         this.contador++
@@ -61,11 +62,12 @@ export class AutenticacaoComponent {
     messageField() {
 
 
-        if (this.contador < 4) {
+        if (this.contador <=3) {
             if ((this.userID == this.usuario.userId) && (this.userPassword == this.usuario.password)) {
                 this.msn = "Logado!"
-                console.log(this.msn);
                 this.color = this.classes.colorOne;
+                localStorage['token'] = 'true'; //ptoh26410x5=50x
+                this.router.navigate(['/']);
                 this.clearInput()
             } else if ((this.userID != this.usuario.userId) && (this.userPassword == this.usuario.password)) {
                 this.msn = "Acesso negado, usuário incorreto";
