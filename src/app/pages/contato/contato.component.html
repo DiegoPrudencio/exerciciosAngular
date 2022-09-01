@@ -1,1 +1,72 @@
-<p>contato works!</p>
+<form [formGroup]="formulario" class="form">
+    <div>
+        <h1 class="display-5">Formulário de contato</h1>
+    </div>
+    <div>
+        <div class="mb-3">
+            <label class="form-label" for="idNome">Nome Completo:</label>
+            <input class="form-control" type="text" id="idNome" formControlName="nome">
+        </div>
+        <div class="form-text must" *ngIf="formulario.get('nome')?.errors?.['required'] && formulario.get('nome')?.touched">
+            Nome obrigatório
+        </div>
+    </div>
+
+    <div >
+        <div class="mb-3">
+            <label class="form-label" for="idTelefone">Contato:</label>
+            <input class="form-control" type="text" id="idTelefone" formControlName="telefone">
+        </div>
+    </div>
+
+    <div>
+        <div class="mb-3">
+            <label class="form-label" for="idEmail">E-mail:</label>
+            <input class="form-control" type="text" id="idEmail" formControlName="email">
+        </div>
+        <div class="form-text must" *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">
+            E-mail obrigatório
+        </div>
+    </div>
+
+    <div>
+        <div class="mb-3">
+            <label class="form-label" for="idCep">CEP:</label>
+            <input class="form-control" type="text" id="idCep" formControlName="cep">
+        </div>
+        <div class="form-text must" *ngIf="formulario.get('cep')?.errors?.['minlength'] && formulario.get('cep')?.touched">
+            Tamanho minimo 8 caracteres
+        </div>
+    </div>
+
+    <div>
+        <div class="mb-3">
+            <label class="form-label" for="idAssunto">Assunto:</label>
+            <input class="form-control" type="text" id="idAssunto" formControlName="assunto">
+        </div>
+        <div class="form-text must" *ngIf="formulario.get('assunto')?.errors?.['required'] && formulario.get('assunto')?.touched">
+            Assunto obrigatório
+        </div>
+        <div class="form-text must" *ngIf="formulario.get('assunto')?.errors?.['maxlength'] && formulario.get('assunto')?.touched">
+            Tamanho máximo 50 caracteres
+        </div>
+    </div>
+
+    <div>
+        <div class="mb-3">
+            <label class="form-label"for="idMensagem">Mensagem:</label> <br>
+            <textarea class="form-control" type="text" id="idMensagem" formControlName="mensagem"></textarea>
+        </div>
+        <div class="form-tex must" *ngIf="formulario.get('mensagem')?.errors?.['required'] && formulario.get('mensagem')?.touched">
+            Mensagem obrigatória
+        </div>
+        <div class="form-text must" *ngIf="formulario.get('mensagem')?.errors?.['maxlength'] && formulario.get('mensagem')?.touched">
+            Tamanho máximo 500 caracteres
+        </div>
+    </div>
+
+
+    <button class="btn btn-dark" (click)="enviar()" [disabled]="!formulario.valid">Enviar</button>
+
+
+</form>
